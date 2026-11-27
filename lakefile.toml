@@ -1,0 +1,13 @@
+name = "on_demand_precision_protocol"
+defaultTargets = ["OnDemandPrecision"]
+
+[leanOptions]
+autoImplicit = false
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "v4.33.1"
+
+[[lean_lib]]
+name = "OnDemandPrecision"
