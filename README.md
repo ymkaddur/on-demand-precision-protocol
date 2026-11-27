@@ -34,6 +34,17 @@ The scope of each result is given with it.
 | | sign class `y ≥ 0`, `∑ y_k ≤ ρ`: robust **iff** `z_i − z_j > ρ·max(0, max_k(u_jk − u_ik))` | [L-known] | linear functionals are maximized at vertices of the scaled simplex; `ρ > 0` |
 | | **separation**: with the same rows and radius, the sign constraint certifies a margin of `1/2` that the unconstrained ball rejects (it needs `> 1`) | [L] | explicit instance with two classes and one latent coordinate |
 
+### Restoration and side information
+
+| Module | Statement | Status | Scope |
+|--------|-----------|--------|-------|
+| `RestorationFibers` | restoring an attribute `φ` of the history from the current state needs exactly as many tags as the largest number of values of `φ` on a fiber | [L-known] | finite histories, exact restoration |
+| | claim "a correct answer about the present implies restorability" (overwrite: `N` tags needed) | **refuted** | explicit instance |
+| | dropping `d` low bits of an integer: exact restoration needs `2^d` tags (`d` bits) | [L-known] | — |
+| | independent components: a joint tag needs the product of the separate alphabets, so isolation costs nothing | [L-known] | — |
+
+Details: [docs/restoration-fibers.md](docs/restoration-fibers.md).
+
 Open questions:
 
 - **open**: a lower bound on the number of bits any certificate needs to guarantee top-k
