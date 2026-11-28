@@ -1,5 +1,22 @@
 # on-demand-precision-protocol
 
+## Directional refinement of linear readings
+
+[`DirectionalReaderBudget.lean`](OnDemandPrecision/DirectionalReaderBudget.lean)
+gives exact linear-reader endpoints for a product of closed coordinate cells.
+Both endpoints are attained by choosing each cell's endpoint according to the
+reader sign. The midpoint error is bounded by the sum of half-widths weighted
+by the absolute reader coefficients. A block with a common half-width needs
+only the sum of those coefficients' absolute values. Bisection halves that
+block's contribution, and the acceptance test also accounts for arithmetic and
+prior approximation errors.
+
+See `reading_mem_interval`, `lower_attained`, `upper_attained`,
+`midpoint_error_le`, `radius_by_blocks`, `radius_refines`, `bisect_enclosure`
+and `accept_with_debt`. The statements concern a supplied product enclosure.
+Input quantization, rounding bounds and physical layout require separate
+verification.
+
 A certified decision protocol in which precision is an action taken on demand, with exact
 storage-budget conditions and exact robust certificates for structured perturbations, in Lean 4
 with Mathlib.
